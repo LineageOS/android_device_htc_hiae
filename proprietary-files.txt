@@ -56,8 +56,7 @@ vendor/lib/soundfx/libswdap.so
 # Bluetooth
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXScheduler.so
+vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so:vendor/lib/libaptX_encoder.so
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon

@@ -1,6 +1,7 @@
 Copyright 2016 - The CyanogenMod Project
+Copyright 2017-2018 The LineageOS Project
 
-Common device configuration for HTC One A9
+Device configuration for HTC One A9
 =====================================
 
 Basic   | Spec Sheet

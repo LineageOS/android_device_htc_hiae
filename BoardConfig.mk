@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,9 +17,10 @@
 
 BOARD_VENDOR := htc
 
-COMMON_PATH := device/htc/hiae-common
+TARGET_SPECIFIC_HEADER_PATH := device/htc/hiae/include
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/hiae-common/include
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := htc_hiaeul,htc_hiaeuhl,htc_hiaewhl,,hiaeul,hiaeuhl,htc_hiaewhl,hiae
 
 # Architecture
 TARGET_ARCH := arm64
@@ -81,7 +83,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 TARGET_LD_SHIM_LIBS := /system/vendor/lib/libBeautyChat.so|/system/vendor/lib/libshim_camera.so:/system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so:/system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so:/system/lib/libpower.so|/system/vendor/lib/libshim_power.so:/system/lib64/libpower.so|/system/vendor/lib64/libshim_power.so:/system/vendor/lib64/libril.so|/system/vendor/lib64/libshim_ril.so
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/hiae/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -111,18 +113,26 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3321888768
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11190403072
+
 TARGET_ALLOW_LEGACY_AIDS := true
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := device/htc/hiae/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/htc/hiae/manifest.xml
+DEVICE_MATRIX_FILE := device/htc/hiae/compatibility_matrix.xml
 
 # Init
+TARGET_INIT_VENDOR_LIB := libinit_hiae
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Keymaster
@@ -133,7 +143,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += \
-    $(COMMON_PATH)/lineagehw
+    device/htc/hiae/lineagehw
 
 # NFC
 BOARD_NFC_CHIPSET := pn548
@@ -145,7 +155,7 @@ TARGET_HAS_NO_WIFI_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+TARGET_SYSTEM_PROP := device/htc/hiae/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
@@ -153,14 +163,14 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_USE_SDCLANG := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/htc/hiae/rootdir/etc/recovery.fstab
 
 # RIL
 TARGET_RIL_VARIANT := caf
 
 # SELinux
 -include device/lineage/sepolicy/qcom/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
 
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -179,4 +189,4 @@ WIFI_DRIVER_FW_PATH_AP      := "ap"
 WIFI_DRIVER_FW_PATH_STA     := "sta"
 
 # inherit from the proprietary version
--include vendor/htc/hiae-common/BoardConfigVendor.mk
+-include vendor/htc/hiae/BoardConfigVendor.mk

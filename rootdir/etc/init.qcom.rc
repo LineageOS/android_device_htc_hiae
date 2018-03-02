@@ -405,6 +405,7 @@ service perfd /system/vendor/bin/perfd
     user root
     group root readproc
     disabled
+    socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
 service ppd /system/vendor/bin/mm-pp-daemon

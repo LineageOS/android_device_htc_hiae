@@ -34,6 +34,7 @@
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
+/dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/pps                                 u:object_r:pps_socket:s0
 /dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
@@ -185,17 +186,13 @@
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
 
-/sys/devices(/platform)?/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw(/.*)? u:object_r:sysfs_devfreq:s0
-/sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
-/sys/devices(/platform)?/soc/soc:qcom,llccbw/devfreq/soc:qcom,llccbw(/.*)? u:object_r:sysfs_devfreq:s0
-/sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:sysfs_devfreq:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 /sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_lpm:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
-
-/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
+/sys/devices/soc\.0/qcom,cpubw\.[0-9]+/devfreq/qcom,cpubw(/.*)?     u:object_r:sysfs_devfreq:s0
+/sys/devices/soc\.0/qcom,gpubw\.[0-9]+/devfreq/qcom,gpubw(/.*)?     u:object_r:sysfs_devfreq:s0
+/sys/devices/soc\.0/qcom,mincpubw\.[0-9]+/devfreq/qcom,mincpubw(/.*)? u:object_r:sysfs_devfreq:s0
+/sys/devices/soc\.0/[a-f0-9]+.qcom,kgsl-3d0/devfreq(/.*)?           u:object_r:sysfs_kgsl:s0
+/sys/devices/soc\.0/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)?     u:object_r:sysfs_kgsl:s0
+/sys/devices/soc\.0/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
@@ -216,6 +213,7 @@
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
 /data/rfs.*                                                         u:object_r:rfs_file:s0
+/data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 

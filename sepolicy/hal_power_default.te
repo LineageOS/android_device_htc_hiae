@@ -1,0 +1,2 @@
+allow hal_power_default mpctl_socket:dir search;
+unix_socket_connect(hal_power_default, mpctl, perfd)

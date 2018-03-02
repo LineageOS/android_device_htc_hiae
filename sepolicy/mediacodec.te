@@ -66,3 +66,5 @@ allow mediacodec media_data_file:dir create_dir_perms;
 allow mediacodec media_data_file:file create_file_perms;
 
 allow mediacodec debug_gralloc_prop:file r_file_perms;
+
+unix_socket_connect(mediacodec, mpctl, perfd)

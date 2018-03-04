@@ -23,6 +23,8 @@ LOCAL_SRC_FILES := \
 	tfa.c \
 	audio_amplifier.c
 
+LOCAL_CFLAGS += -DWITH_TFA
+
 LOCAL_MODULE := audio_amplifier.msm8952
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional

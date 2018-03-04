@@ -109,7 +109,7 @@ static int amp_dev_close(hw_device_t *device)
 {
     amp_device_t *dev = (amp_device_t *) device;
 
-#if WITH_TFA
+#ifdef WITH_TFA
     tfa_power(dev->tfa, false);
 #endif
     tfa_destroy(dev->tfa);

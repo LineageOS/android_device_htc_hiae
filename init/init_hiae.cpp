@@ -89,12 +89,9 @@ void vendor_load_properties() {
         property_override("ro.build.changelist", "635503");
         property_override("ro.build.product", "htc_hiaeuhl");
         property_override("ro.build.sense.version", "8.0");
-        property_override("ro.product.device", "htc_hiaeuhl");
-        property_override("ro.product.model", "HTC One A9");
-        property_override("ro.product.name", "hiaeul_00401");
-        property_override("ro.vendor.product.device", "htc_hiaeuhl");
-        property_override("ro.vendor.product.model", "HTC One A9");
-        property_override("ro.vendor.product.name", "hiaeul_00401");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "htc_hiaeuhl");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "HTC One A9");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "hiaeul_00401");
     } else if (bootmid == "2PQ912000") {
         /* hiaeul */
         gsm_properties("9");
@@ -103,12 +100,9 @@ void vendor_load_properties() {
         property_override("ro.build.changelist", "861328");
         property_override("ro.build.product", "htc_hiaeul");
         property_override("ro.build.sense.version", "8.0");
-        property_override("ro.product.device", "htc_hiaeul");
-        property_override("ro.product.model", "HTC One A9");
-        property_override("ro.product.name", "hiaeul_00617");
-        property_override("ro.vendor.product.device", "htc_hiaeul");
-        property_override("ro.vendor.product.model", "HTC One A9");
-        property_override("ro.vendor.product.name", "hiaeul_00617");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "htc_hiaeul");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "HTC One A9");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "hiaeul_00617");
     } else if (bootmid == "2PQ930000") {
         /* hiaewhl */
         cdma_properties("1", "8");
@@ -117,12 +111,9 @@ void vendor_load_properties() {
         property_override("ro.build.changelist", "688951");
         property_override("ro.build.product", "htc_hiaewhl");
         property_override("ro.build.sense.version", "8.0");
-        property_override("ro.product.device", "htc_hiaewhl");
-        property_override("ro.product.model", "HTC One A9");
-        property_override("ro.product.name", "hiaeul_00651");
-        property_override("ro.vendor.product.device", "htc_hiaewhl");
-        property_override("ro.vendor.product.model", "HTC One A9");
-        property_override("ro.vendor.product.name", "hiaeul_00651");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "htc_hiaewhl");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "HTC One A9");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "hiaeul_00651");
     }
 
     device = GetProperty("ro.product.device", "");

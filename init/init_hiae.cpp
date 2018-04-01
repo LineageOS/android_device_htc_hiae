@@ -48,6 +48,13 @@ void property_override(char const prop[], char const value[]) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[] char const vendor_prop[],
+    char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void cdma_properties(char const default_cdma_sub[], char const default_network[]) {
     property_set("ril.subscription.types", "NV,RUIM");
     property_set("ro.ril.enable.sdr", "0");

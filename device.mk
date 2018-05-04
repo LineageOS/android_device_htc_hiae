@@ -216,7 +216,8 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    pp_calib_data_samsung_s6e3fa3x01_1080p_command_mode_dsi_panel.xml
+    pp_calib_data_samsung_s6e3fa3x01_1080p_command_mode_dsi_panel.xml \
+    vendor.lineage.livedisplay@1.0-service-legacymm
 
 # Media
 PRODUCT_COPY_FILES += \

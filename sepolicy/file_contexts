@@ -203,6 +203,7 @@
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
+/data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0

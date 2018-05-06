@@ -61,11 +61,11 @@ vendor/lib/libaptXScheduler.so
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-lib/hw/camera.msm8952.so:vendor/lib/hw/camera.msm8952.so
+lib/hw/camera.msm8952.so:vendor/lib/hw/camera.msm8952.so|de1d894c5387da24e8a871c03a1056e263bebcf0
 lib/libawb_calibration.so:vendor/lib/libawb_calibration.so
 lib/libBeautyChat.so:vendor/lib/libBeautyChat.so
 lib/libcameraface.so:vendor/lib/libcameraface.so
-lib/libcamerapp.so:vendor/lib/libcamerapp.so
+lib/libcamerapp.so:vendor/lib/libcamerapp.so|d47a84668e3d9e7a5fdc12c11908978cad07adad
 lib/libhtc_facebeauty.so:vendor/lib/libhtc_facebeauty.so
 lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
@@ -358,7 +358,7 @@ vendor/lib/librs_adreno.so
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
+etc/permissions/com.qualcomm.location.xml|13d7bb369e3fed83419ec32ee990533d89ff5c78
 etc/permissions/izat.xt.srv.xml
 etc/xtra_root_cert.pem
 framework/izat.xt.srv.jar
@@ -431,9 +431,9 @@ vendor/firmware/libpn548_fw.so:vendor/firmware/libpn548ad_fw.so
 
 # Perf
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
-vendor/bin/perfd
-vendor/lib64/libqti-perfd-client.so
-vendor/lib/libqti-perfd-client.so
+vendor/bin/perfd|d0fef04b3fa50fe0c2b81e1cd6abe91a58cc391f
+vendor/lib64/libqti-perfd-client.so|ad4fec75c563938347a2fe08a70828c4f6f28545
+vendor/lib/libqti-perfd-client.so|c6ebb8d37753b5ef0179c7401b4b688ae5b4bd35
 
 # Peripheral manager
 bin/pm-service:vendor/bin/pm-service
@@ -504,9 +504,9 @@ bin/tftp_server:vendor/bin/tftp_server
 lib64/libhtc_rilhook.so:vendor/lib64/libhtc_rilhook.so
 lib64/librilqmiservices.so:vendor/lib64/librilqmiservices.so
 vendor/bin/qti
-vendor/lib64/com.quicinc.cne.api@1.0.so
-vendor/lib64/com.quicinc.cne.constants@1.0.so
-vendor/lib64/libcneapiclient.so
+vendor/lib64/com.quicinc.cne.api@1.0.so|503825cc8a3c0d422e16e04b398d2c1924e518ca
+vendor/lib64/com.quicinc.cne.constants@1.0.so|a60fde6f9328635bf43bb7008dd9517e4e749e8b
+vendor/lib64/libcneapiclient.so|33e7465996749a8823ac03e34a94e3112c88dda4
 vendor/lib64/libconfigdb.so
 vendor/lib64/libhtc_common.so
 vendor/lib64/liblqe.so
@@ -514,10 +514,10 @@ vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so
+vendor/lib64/libril-qc-qmi-1.so|c3c8dee9bf71b9849096e5f4a95a93cc7f820b8d
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/libsettings.so
+vendor/lib64/libsettings.so|3e459839d90a27d2eb23a3c9d030f46a5c4bfaf1
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
@@ -527,9 +527,9 @@ vendor/qcril.db
 lib64/hw/sensors.msm8952.so:vendor/lib64/hw/sensors.msm8952.so
 
 # Thermal
-vendor/bin/thermal-engine
+vendor/bin/thermal-engine|364f4765489130c88aebae9254651e7a82b1c606
 vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+vendor/lib64/libthermalioctl.so|a946c8f42ba910e607194aa035872bbd07045b06
 vendor/lib/libthermalclient.so
 
 # Time services
@@ -541,6 +541,6 @@ bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib/libTimeService.so
 
 # Widevine
-vendor/lib/libdrmdecrypt.so
-vendor/lib64/mediadrm/libwvdrmengine.so
-vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libdrmdecrypt.so|045f69fc0af0979e1a59628cd1d39ef4ce183a38
+vendor/lib64/mediadrm/libwvdrmengine.so|4278a71cfc06525187e571561e9e53fdf15e13b8
+vendor/lib/mediadrm/libwvdrmengine.so|a66b5270bfb797ce5c821f97d30d2c8d8dcb3d1e

@@ -106,6 +106,9 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     Snap
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hdrhax:system/vendor/etc/hdrhax
+
 # Device Settings
 PRODUCT_PACKAGES += \
     DeviceSettings

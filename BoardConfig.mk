@@ -167,7 +167,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_USE_SDCLANG := true
 
 # Recovery
+ifneq ($(WITH_TWRP),true)
 TARGET_RECOVERY_FSTAB := device/htc/hiae/rootdir/etc/recovery.fstab
+endif
 
 # RIL
 TARGET_RIL_VARIANT := caf
@@ -175,6 +177,11 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 -include device/lineage/sepolicy/qcom/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
+
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include device/htc/hiae/twrp.mk
+endif
 
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X

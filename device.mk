@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     liblog_htc
 
+ifeq ($(WITH_TWRP),true)
+PRODUCT_PACKAGES += \
+    liblog_htc_sbin
+endif
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \

@@ -1,0 +1,7 @@
+/boot            emmc              /dev/block/bootdevice/by-name/boot
+/system          ext4              /dev/block/bootdevice/by-name/system
+/system_image    emmc              /dev/block/bootdevice/by-name/system
+/data            ext4              /dev/block/bootdevice/by-name/userdata    flags=forceencrypt=/dev/block/bootdevice/by-name/extra
+
+/external_sd     vfat              /dev/block/mmcblk1p1 /dev/block/mmcblk1   flags=removable;storage;wipeingui;display="Micro SDCard"
+/usb-otg         vfat              /dev/block/sda1      /dev/block/sda       flags=removable;storage;wipeingui;display="USB OTG"

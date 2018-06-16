@@ -90,6 +90,9 @@ type spss_data_file, file_type, data_file_type;
 # mm-qcamera-daemon socket
 type camera_socket, file_type;
 
+# Socket node needed by ims_data daemon
+type ims_socket, file_type;
+
 # ssg qmi gateway daemon socket
 type ssgqmig_socket, file_type, mlstrustedobject;
 

@@ -3,6 +3,8 @@ allow radio avtimer_device:chr_file r_file_perms;
 
 allow radio { cameraserver_service mediaextractor_service mediacodec_service }:service_manager find;
 
+qmux_socket(radio)
+
 # diag
 userdebug_or_eng(`
     diag_use(radio)

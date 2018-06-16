@@ -16,6 +16,7 @@ type msm_irqbalance_prop, property_type;
 type opengles_prop, property_type;
 type per_mgr_state_prop, property_type;
 type perfd_prop, property_type;
+type qcom_ims_prop, property_type;
 type qemu_gles_prop, property_type;
 type qemu_hw_mainkeys_prop, property_type;
 type qti_prop, property_type;

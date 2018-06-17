@@ -3,7 +3,8 @@ type perfd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(perfd)
 
-allow perfd self:capability { dac_override };
+allow perfd self:capability { dac_override kill };
+allow perfd domain:process signull;
 
 allow perfd {
     sysfs_devices_system_cpu

@@ -386,14 +386,6 @@ service netmgrd /system/vendor/bin/netmgrd
     group root wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
 
-service op-prop /system/vendor/bin/operator-properties
-    class main
-    disabled
-    oneshot
-
-on property:gsm.sim.operator.numeric=*
-    start op-prop
-
 service per_mgr /system/vendor/bin/pm-service
     class late_start
     user system

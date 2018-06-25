@@ -262,10 +262,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
 
-# Properties
-PRODUCT_PACKAGES += \
-    operator-properties
-
 # QMI
 PRODUCT_PACKAGES += \
     dsi_config.xml \

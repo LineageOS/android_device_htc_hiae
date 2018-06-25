@@ -50,8 +50,6 @@ BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom ehci-hcd.park=3 a
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/htc/msm8952
 TARGET_KERNEL_CONFIG := lineage_hiae_defconfig
@@ -110,8 +108,7 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-HAVE_ADRENO_SOURCE:= false
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -137,7 +134,6 @@ DEVICE_MATRIX_FILE := device/htc/hiae/compatibility_matrix.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_hiae
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true

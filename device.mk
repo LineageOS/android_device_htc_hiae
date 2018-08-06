@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-hiae \
-    libshim_camera \
+    libshim_camera_hiae \
     Snap
 
 PRODUCT_COPY_FILES += \
@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
-    libshim_power
+    libshim_power_hiae
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
-    libshim_gps
+    libshim_gps_hiae
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:system/etc/flp.conf \
@@ -282,7 +282,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libhtcril_db \
     librmnetctl \
-    libshim_ril
+    libshim_ril_hiae
 
 # Seccomp
 PRODUCT_COPY_FILES += \

@@ -4,7 +4,7 @@ cc_library_shared {
 
     shared_libs: ["libui"],
 
-    name: "libshim_camera",
+    name: "libshim_camera_hiae",
 
     compile_multilib: "32",
     proprietary: true,
@@ -15,7 +15,7 @@ cc_library_shared {
 
     srcs: ["gps_shim.cpp"],
 
-    name: "libshim_gps",
+    name: "libshim_gps_hiae",
 
     proprietary: true,
 
@@ -25,7 +25,7 @@ cc_library_shared {
 
     srcs: ["power_shim.cpp"],
 
-    name: "libshim_power",
+    name: "libshim_power_hiae",
 
     proprietary: true,
 
@@ -35,7 +35,7 @@ cc_library_shared {
 
     srcs: ["ril_shim.cpp"],
 
-    name: "libshim_ril",
+    name: "libshim_ril_hiae",
 
     proprietary: true,
 

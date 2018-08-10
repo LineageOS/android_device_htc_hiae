@@ -1,6 +1,5 @@
 #
-# Copyright 2016 The CyanogenMod Project
-# Copyright 2017-2018 The LineageOS Project
+# Copyright 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +14,9 @@
 # limitations under the License.
 #
 
+BOARD_VENDOR := htc
+TARGET_VENDOR := htc
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -22,9 +24,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from hiae device
 $(call inherit-product, device/htc/hiae/device.mk)
 
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := hiae
-PRODUCT_NAME := full_hiae
+PRODUCT_NAME := lineage_hiae
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := HTC One A9
 PRODUCT_MANUFACTURER := HTC

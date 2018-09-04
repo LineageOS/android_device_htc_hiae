@@ -1,9 +1,0 @@
-subdirs = [
-    "camera",
-    "init",
-    "libhtcril_db",
-    "light",
-    "shims",
-    "usb",
-    "vibrator",
-]

@@ -172,7 +172,7 @@ endif
 TARGET_RIL_VARIANT := caf
 
 # SELinux
--include device/lineage/sepolicy/qcom/sepolicy.mk
+-include device/lineage/sepolicy/common/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
 
 # TWRP

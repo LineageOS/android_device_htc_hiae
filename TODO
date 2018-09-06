@@ -1,0 +1,8 @@
+Fix video playback
+Fix camera
+RIL instability
+Fix SELinux policy
+Add support for /proc/uid_cputime
+Prefix services with vendor
+Treble-ize remaining configs
+Move NFC firmware to vendor

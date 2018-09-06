@@ -9,6 +9,7 @@ type logdump_partition, dev_type;
 type mdtp_device, dev_type;
 type modem_block_device, dev_type;
 type modem_efs_partition_device, dev_type;
+type persist_block_device, dev_type;
 type qce_device, dev_type;
 type qdsp_device, dev_type, mlstrustedobject;
 type qdss_device, dev_type;

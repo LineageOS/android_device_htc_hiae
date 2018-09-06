@@ -30,7 +30,7 @@ kill_hciattach ()
   # this shell doesn't exit now -- wait returns for normal exit
 }
 
-setprop bluetooth.status off
+setprop vendor.bluetooth.status off
 
 # default BT LE power class 2 (-P 1)
 
@@ -51,6 +51,6 @@ esac
 # init does SIGTERM on ctl.stop for service
 trap "kill_hciattach" TERM INT
 
-setprop bluetooth.status on
+setprop vendor.bluetooth.status on
 
 exit 0

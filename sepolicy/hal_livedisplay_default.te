@@ -1,0 +1,1 @@
+unix_socket_connect(hal_livedisplay_default, pps, mm-pp-daemon)

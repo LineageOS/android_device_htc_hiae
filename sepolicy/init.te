@@ -2,7 +2,6 @@
 allow init fuse:dir { search mounton };
 allow init self:capability sys_module;
 allow init {
-    adsprpcd_file
     cache_file
     persist_file
     storage_file
@@ -10,7 +9,7 @@ allow init {
 allow init kmsg_device:chr_file write;
 
 # Allow triggering ADSP FWs loading
-allow init sysfs_msm_subsys:file w_file_perms;
+allow init sysfs_msm_subsys:file { w_file_perms setattr };
 
 # Allow triggering IPA FWs loading
 allow init ipa_dev:chr_file write;
@@ -36,4 +35,26 @@ allow init {
 allow init { domain -lmkd -crash_dump }:process noatsecure;
 allow init carrier_file:dir mounton;
 allow init carrier_file:file rw_file_perms;
+allow init proc_htc_debug:file setattr;
+allow init proc_kernel_sched:file w_file_perms;
+allow init proc_slabinfo:file setattr;
+allow init sysfs_bluetooth_writable:file setattr;
+allow init sysfs_camera:file setattr;
+allow init sysfs_cpu_boost:file w_file_perms;
+allow init sysfs_devfreq:file w_file_perms;
+allow init sysfs_devices_system_cpu:file w_file_perms;
+allow init sysfs_dm:file w_file_perms;
+allow init sysfs_graphics:file setattr;
+allow init sysfs_keyboard:file setattr;
+allow init sysfs_lpm:file w_file_perms;
+allow init sysfs_mmc:file { w_file_perms setattr };
+allow init sysfs_net:file w_file_perms;
+allow init sysfs_poweron_alarm:file w_file_perms;
+allow init sysfs_reclaim:file w_file_perms;
+allow init sysfs_sensors:{ file lnk_file } { r_file_perms setattr };
+allow init sysfs_ssr_toggle:file w_file_perms;
+allow init sysfs_thermal:file w_file_perms;
+allow init sysfs_touchscreen:file setattr;
+allow init sysfs_wlan_fwpath:file setattr;
+r_dir_file(init, proc_dt_firmware)
 set_prop(init, wcnss_prop)

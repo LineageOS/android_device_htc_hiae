@@ -23,13 +23,10 @@ r_dir_file(mediaserver, sysfs_thermal);
 allow mediaserver audio_data_file:sock_file { create setattr unlink };
 allow mediaserver audio_data_file:dir remove_name;
 
-#Allow mediaserver to set camera properties
+# Allow mediaserver to set camera properties
 allow mediaserver camera_prop:property_service set;
 
-# allow mediaserver to access adsprpcd
-r_dir_file(mediaserver, adsprpcd_file);
-
-# allow mediaserver to communicate with bootanim
+# Allow mediaserver to communicate with bootanim
 binder_call(mediaserver, bootanim);
 
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;

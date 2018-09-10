@@ -39,9 +39,6 @@ userdebug_or_eng(`
   allow system_app tombstone_data_file:dir r_dir_perms;
   allow system_app tombstone_data_file:file r_file_perms;
   diag_use(system_app)
-
-  # allow to read ssr ramdump
-  allow system_app ssr_ramdump_data_file:dir r_dir_perms;
 ')
 
 allow system_app bluetooth:unix_stream_socket ioctl;
@@ -78,7 +75,5 @@ set_prop(system_app, boot_mode_prop);
 allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
 allow system_app self:socket ioctl;
 
-allow system_app vendor_radio_data_file:dir rw_dir_perms;
-allow system_app vendor_radio_data_file:file create_file_perms;
-
-allow system_app sysfs_sensors:file w_file_perms;
+allow system_app sysfs_sensors:dir search;
+allow system_app sysfs_sensors:file rw_file_perms;

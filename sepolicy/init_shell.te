@@ -136,10 +136,6 @@ r_dir_file(qti_init_shell, firmware_file)
 allow qti_init_shell block_device:dir r_dir_perms;
 allow qti_init_shell swap_block_device:blk_file rw_file_perms;
 
-# /data/system/swap/swapfile
-allow qti_init_shell swap_data_file:dir rw_dir_perms;
-allow qti_init_shell swap_data_file:file create_file_perms;
-
 # For configfs permission
 allow qti_init_shell configfs:dir r_dir_perms;
 allow qti_init_shell configfs:file rw_file_perms;
@@ -166,8 +162,6 @@ allow qti_init_shell rmnet_mux_prop:file r_file_perms;
 r_dir_file(qti_init_shell, sysfs_devfreq)
 allow qti_init_shell sysfs_devfreq:file w_file_perms;
 
-allow qti_init_shell vendor_radio_data_file:dir create_dir_perms;
-allow qti_init_shell vendor_radio_data_file:file create_file_perms;
-
-set_prop(qti_init_shell, vendor_rild_libpath_prop);
 set_prop(qti_init_shell, system_radio_prop)
+set_prop(qti_init_shell, vendor_rild_libpath_prop);
+

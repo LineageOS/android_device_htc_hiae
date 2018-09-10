@@ -26,9 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-# Allow hal_audio to read soundcard state under /proc/asound
-allow hal_audio proc_audiod:file r_file_perms;
-
 # Allow audioserver to access sysfs nodes
 allow hal_audio sysfs:file rw_file_perms;
 

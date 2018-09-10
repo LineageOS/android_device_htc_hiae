@@ -7,9 +7,9 @@ allow perfd self:capability { dac_override kill };
 allow perfd domain:process signull;
 
 allow perfd {
-    sysfs_devices_system_cpu
-    sysfs_cpu_online
+    proc_kernel_sched
     proc
+    sysfs_devices_system_cpu
     sysfs
 }:file rw_file_perms;
 
@@ -20,10 +20,6 @@ allow perfd sysfs_devfreq:file write;
 # Allow access to msm_perf sysfs entry
 r_dir_file(perfd, sysfs_msm_perf)
 allow perfd sysfs_msm_perf:file write;
-
-# Allow access to msm_power sysfs entry
-r_dir_file(perfd, sysfs_msm_power)
-allow perfd sysfs_msm_power:file write;
 
 # Allow access to kgsl sysfs entry
 r_dir_file(perfd, sysfs_kgsl)

@@ -5,14 +5,18 @@ r_dir_file(ueventd, firmware_file)
 r_dir_file(ueventd, persist_file)
 
 # For wifi to access wifi_data_file
-r_dir_file(ueventd, wifi_data_file)
+r_dir_file(ueventd, wifi_vendor_data_file)
+
+# Allow access to /proc/device-tree nodes
+r_dir_file(ueventd, proc_dt_firmware)
 
 allow ueventd {
     { sysfs_type - usermodehelper }
     sysfs_battery_supply
-    sysfs_thermal
-    sysfs_usb_supply
-    sysfs_socinfo
     sysfs_data
     sysfs_kgsl
+    sysfs_mmc
+    sysfs_socinfo
+    sysfs_thermal
+    sysfs_usb_supply
 }:file w_file_perms;

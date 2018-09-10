@@ -7,9 +7,10 @@ allow perfd self:capability { dac_override kill };
 allow perfd domain:process signull;
 
 allow perfd {
+    proc_kernel_sched
+    proc
     sysfs_devices_system_cpu
     sysfs_cpu_online
-    proc
     sysfs
 }:file rw_file_perms;
 

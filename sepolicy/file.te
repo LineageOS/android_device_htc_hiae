@@ -78,7 +78,6 @@ type mpctl_data_file, file_type, data_file_type;
 
 type sysfs_devfreq, fs_type, sysfs_type;
 type sysfs_lpm, fs_type, sysfs_type;
-type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
 type sysfs_msm_perf, fs_type, sysfs_type;
@@ -173,9 +172,13 @@ type sysfs_msm_power, fs_type, sysfs_type;
 # subsystem startup
 type sysfs_msm_subsys, fs_type, sysfs_type;
 
+# data
+type wifi_vendor_data_file, file_type, data_file_type;
+
 # debugfs
 type debugfs_ion, debugfs_type, fs_type;
 type debugfs_rmt, debugfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
 
 # files
 type carrier_file, fs_type;
@@ -183,8 +186,14 @@ allow carrier_file labeledfs:filesystem associate;
 allow firmware_file rootfs:filesystem associate;
 
 # proc
+type proc_dt_firmware, fs_type;
+type proc_htc_debug, fs_type;
+type proc_kernel_sched, fs_type;
+type proc_slabinfo, fs_type;
 type proc_wcnss_service, fs_type;
 
 # sysfs
 type sysfs_fingerprint, sysfs_type, fs_type;
+type sysfs_mmc, sysfs_type, fs_type;
+type sysfs_poweron_alarm, sysfs_type, fs_type;
 type sysfs_sensors, sysfs_type, fs_type;

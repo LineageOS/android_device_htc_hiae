@@ -18,17 +18,6 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
     htc_log.c
 
-LOCAL_MODULE := liblog_htc
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    htc_log.c
-
 LOCAL_MODULE := liblog_htc_sbin
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

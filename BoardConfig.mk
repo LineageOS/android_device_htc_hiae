@@ -179,6 +179,10 @@ TARGET_RIL_VARIANT := caf
 -include device/lineage/sepolicy/common/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    device/htc/hiae/liblog_htc
+
 # TWRP
 ifeq ($(WITH_TWRP),true)
 include device/htc/hiae/twrp.mk

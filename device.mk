@@ -178,13 +178,13 @@ endif
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.bt.sh \
-    init.qcom.power.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    ueventd.qcom.rc
+    fstab.hiae \
+    init.hiae.bt.sh \
+    init.hiae.power.rc \
+    init.hiae.rc \
+    init.hiae.sh \
+    init.hiae.usb.rc \
+    ueventd.hiae.rc
 
 # Input
 PRODUCT_COPY_FILES += \

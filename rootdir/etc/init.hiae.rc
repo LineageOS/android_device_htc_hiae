@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
-import init.qcom.usb.rc
+import init.hiae.power.rc
+import init.hiae.usb.rc
 
 on early-init
     symlink /data/tombstones /tombstones
@@ -60,7 +60,7 @@ on init
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all fstab.hiae
 
 on post-fs-data
     # Create directory for tombstone
@@ -297,7 +297,7 @@ service vendor.adsprpcd /system/vendor/bin/adsprpcd
     user media
     group media
 
-service vendor.hciattach /system/vendor/bin/init.qcom.bt.sh
+service vendor.hciattach /system/vendor/bin/init.hiae.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
@@ -405,7 +405,7 @@ service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
 
-service vendor.qcom-sh /system/vendor/bin/init.qcom.sh
+service vendor.qcom-sh /system/vendor/bin/init.hiae.sh
     class late_start
     user root
     seclabel u:r:qti_init_shell:s0

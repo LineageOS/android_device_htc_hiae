@@ -1,10 +1,13 @@
+soong_namespace {
+}
+
 cc_library_shared {
 
     srcs: ["camera_shim.cpp"],
 
     shared_libs: ["libui"],
 
-    name: "libshim_camera_hiae",
+    name: "libshim_camera",
 
     compile_multilib: "32",
     proprietary: true,
@@ -15,7 +18,7 @@ cc_library_shared {
 
     srcs: ["gps_shim.cpp"],
 
-    name: "libshim_gps_hiae",
+    name: "libshim_gps",
 
     proprietary: true,
 
@@ -25,7 +28,7 @@ cc_library_shared {
 
     srcs: ["power_shim.cpp"],
 
-    name: "libshim_power_hiae",
+    name: "libshim_power",
 
     proprietary: true,
 
@@ -35,7 +38,7 @@ cc_library_shared {
 
     srcs: ["ril_shim.cpp"],
 
-    name: "libshim_ril_hiae",
+    name: "libshim_ril",
 
     proprietary: true,
 

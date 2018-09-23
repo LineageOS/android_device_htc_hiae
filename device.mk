@@ -274,10 +274,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_hiae
-
 # Renderscript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

@@ -43,6 +43,7 @@ allow cameraserver system_server:unix_stream_socket { read write };
 #Allow read access to soc/msm-cam/video4linux/video0/name sysfs
 allow cameraserver sysfs:file r_file_perms;
 
+
 allow cameraserver persist_file:dir r_dir_perms;
 set_prop(cameraserver, camera_prop)
 allow cameraserver self:socket create_socket_perms_no_ioctl;
@@ -68,3 +69,4 @@ binder_call(cameraserver, hal_graphics_composer)
 ')
 
 allow cameraserver debugfs_ion:file r_file_perms;
+allow cameraserver proc_version:file r_file_perms;

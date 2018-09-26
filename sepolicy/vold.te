@@ -11,4 +11,5 @@ allow vold { proc_sysrq proc_dirty_ratio }:file rw_file_perms;
 wakelock_use(vold)
 allow vold swap_block_device:blk_file r_file_perms;
 allow vold sysfs_mmc:file w_file_perms;
+r_dir_file(vold, persist_file)
 r_dir_file(vold, proc_dt_firmware)

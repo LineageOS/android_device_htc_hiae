@@ -21,3 +21,5 @@ type_transition netd wifi_data_file:dir wpa_socket "sockets";
 allow netd wpa_socket:dir create_dir_perms;
 
 allow netd rootfs:lnk_file r_file_perms;
+
+allow netd sysfs_net:file w_file_perms;

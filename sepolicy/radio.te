@@ -9,3 +9,5 @@ qmux_socket(radio)
 userdebug_or_eng(`
     diag_use(radio)
 ')
+
+r_dir_file(radio, system_app_data_file)

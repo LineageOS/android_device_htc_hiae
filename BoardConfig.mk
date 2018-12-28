@@ -166,9 +166,6 @@ ifneq ($(WITH_TWRP),true)
 TARGET_RECOVERY_FSTAB := device/htc/hiae/rootdir/etc/recovery.fstab
 endif
 
-# RIL
-TARGET_RIL_VARIANT := caf
-
 # SELinux
 BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
 

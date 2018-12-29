@@ -171,8 +171,7 @@ BOARD_SEPOLICY_DIRS += device/htc/hiae/sepolicy
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    device/htc/hiae/liblog_htc \
-    device/htc/hiae/shims
+    device/htc/hiae
 
 # TWRP
 ifeq ($(WITH_TWRP),true)

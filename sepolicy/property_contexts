@@ -29,7 +29,6 @@ ro.sf.lcd_density               u:object_r:sf_lcd_density_prop:s0
 ro.vendor.ril.                  u:object_r:radio_prop:s0
 ro.wcnss.serialno               u:object_r:wcnss_prop:s0
 sys.boot_mode                   u:object_r:boot_mode_prop:s0
-sys.ims.                        u:object_r:qcom_ims_prop:s0
 sys.usb.configfs                u:object_r:sys_usb_configfs_prop:s0
 sys.usb.controller              u:object_r:sys_usb_controller_prop:s0
 sys.usb.tethering               u:object_r:sys_usb_tethering_prop:s0

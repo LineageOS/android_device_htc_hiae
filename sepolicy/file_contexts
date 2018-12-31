@@ -31,8 +31,6 @@
 ###################################
 # Dev socket nodes
 #
-/dev/socket/ims_datad                           u:object_r:ims_socket:s0
-/dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
 /dev/socket/perfd                               u:object_r:mpctl_socket:s0
@@ -228,9 +226,5 @@
 
 # Vendor binaries
 /system/vendor/bin/hw/android\.hardware\.power@1\.1-service-qti         u:object_r:hal_power_default_exec:s0
-/system/vendor/bin/ims_rtp_daemon           u:object_r:hal_imsrtp_exec:s0
-/system/vendor/bin/imscmservice             u:object_r:imscm_exec:s0
-/system/vendor/bin/imsdatadaemon            u:object_r:ims_exec:s0
-/system/vendor/bin/imsqmidaemon             u:object_r:ims_exec:s0
 /system/vendor/bin/init.hiae.bt.sh          u:object_r:bluetooth_loader_exec:s0
 /system/vendor/bin/perfd                    u:object_r:perfd_exec:s0

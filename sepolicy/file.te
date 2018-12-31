@@ -46,7 +46,6 @@ type proc_wcnss_service, fs_type;
 
 # sockets
 type camera_socket, file_type;
-type ims_socket, file_type;
 type ipacm_socket, file_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type netmgrd_socket, file_type;

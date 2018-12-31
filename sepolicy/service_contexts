@@ -24,5 +24,4 @@
 
 com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 display.qservice                               u:object_r:qdisplay_service:s0
-qti.ims.ext                                    u:object_r:radio_service:s0
 vendor.qcom.PeripheralManager                  u:object_r:per_mgr_service:s0

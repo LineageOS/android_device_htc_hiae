@@ -61,7 +61,6 @@
 /(vendor|system/vendor)/bin/pm-service          u:object_r:per_mgr_exec:s0
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/qti                 u:object_r:qti_exec:s0
 /(vendor|system/vendor)/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
 /(vendor|system/vendor)/bin/tftp_server         u:object_r:rfs_access_exec:s0
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0

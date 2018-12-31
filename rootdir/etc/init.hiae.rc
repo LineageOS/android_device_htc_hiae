@@ -379,12 +379,6 @@ service vendor.qseecomd /system/vendor/bin/qseecomd
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.qti /system/vendor/bin/qti
-    class main
-    user radio
-    group radio net_raw oem_2950 usb net_admin
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root

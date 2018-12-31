@@ -387,9 +387,6 @@ vendor/lib64/libxtwifi_ulp_adaptor.so
 etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw
 
-# IPA
-bin/ipacm-diag:vendor/bin/ipacm-diag
-
 # Keymaster
 etc/firmware/keymaste.b00:vendor/firmware/keymaste.b00
 etc/firmware/keymaste.b01:vendor/firmware/keymaste.b01

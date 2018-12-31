@@ -52,7 +52,6 @@
 /(vendor|system/vendor)/bin/hci_qcomm_init      u:object_r:bluetooth_loader_exec:s0
 /(vendor|system/vendor)/bin/init\.hiae\.sh      u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/ipacm               u:object_r:ipacm_exec:s0
-/(vendor|system/vendor)/bin/ipacm-diag          u:object_r:ipacm-diag_exec:s0
 /(vendor|system/vendor)/bin/irsc_util           u:object_r:irsc_util_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-qcamera-daemon   u:object_r:mm-qcamerad_exec:s0

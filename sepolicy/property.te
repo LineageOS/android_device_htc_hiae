@@ -11,7 +11,6 @@ type freq_prop, property_type;
 type graphics_vulkan_prop, property_type;
 type hwui_prop, property_type;
 type ipacm_prop, property_type;
-type ipacm-diag_prop, property_type;
 type msm_irqbalance_prop, property_type;
 type opengles_prop, property_type;
 type per_mgr_state_prop, property_type;

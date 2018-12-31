@@ -1,6 +1,5 @@
 camera.                         u:object_r:camera_prop:s0
 ctl.ipacm                       u:object_r:ipacm_prop:s0
-ctl.ipacm-diag                  u:object_r:ipacm-diag_prop:s0
 ctl.netmgrd                     u:object_r:ctl_netmgrd_prop:s0
 ctl.perfd                       u:object_r:perfd_prop:s0
 ctl.qmuxd                       u:object_r:ctl_qmuxd_prop:s0

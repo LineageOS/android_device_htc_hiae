@@ -39,8 +39,6 @@ allow qti_init_shell self:capability {
     chown
     fowner
     fsetid
-    dac_override
-    dac_read_search
     sys_admin
 };
 

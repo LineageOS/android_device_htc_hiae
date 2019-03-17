@@ -8,7 +8,7 @@ type qti_debugfs, fs_type, debugfs_type;
 type data_qsee_file, file_type, data_file_type;
 type diag_data_file, file_type, data_file_type;
 type display_misc_file, file_type, data_file_type;
-type ipacm_data_file, file_type;
+type ipacm_data_file, file_type, data_file_type;
 type mpctl_data_file, file_type, data_file_type;
 type netmgrd_data_file, file_type, data_file_type;
 type nfc_vendor_data_file, file_type, data_file_type;
@@ -45,7 +45,7 @@ type proc_kernel_sched, proc_type, fs_type;
 type proc_wcnss_service, proc_type, fs_type;
 
 # sockets
-type camera_socket, file_type;
+type camera_socket, file_type, data_file_type;
 type ipacm_socket, file_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type netmgrd_socket, file_type;

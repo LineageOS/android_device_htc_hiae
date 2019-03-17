@@ -5,14 +5,14 @@ type debugfs_rpm, debugfs_type, fs_type;
 type qti_debugfs, fs_type, debugfs_type;
 
 # data files
-type data_qsee_file, file_type, data_file_type;
 type diag_data_file, file_type, data_file_type;
 type display_misc_file, file_type, data_file_type;
-type ipacm_data_file, file_type, data_file_type;
+type ipacm_vendor_data_file, file_type, data_file_type;
 type mpctl_data_file, file_type, data_file_type;
 type netmgrd_data_file, file_type, data_file_type;
 type nfc_vendor_data_file, file_type, data_file_type;
 type sensors_data_file, file_type, data_file_type;
+type time_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_data_file, file_type, data_file_type;
 
 # filesystem files

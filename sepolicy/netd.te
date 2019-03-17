@@ -6,8 +6,9 @@ binder_use(netd);
 allow netd netd:packet_socket create_socket_perms_no_ioctl;
 
 # allow to read /data/misc/ipa/tether_stats file
-allow netd ipacm_data_file:dir r_dir_perms;
-allow netd ipacm_data_file:file r_file_perms;
+allow netd ipacm_vendor_data_file:dir r_dir_perms;
+allow netd ipacm_vendor_data_file:file r_file_perms;
+allow netd system_data_file:lnk_file read;
 
 # allow netd to use privileged sock ioctls
 allowxperm netd self: { unix_stream_socket } ioctl priv_sock_ioctls;

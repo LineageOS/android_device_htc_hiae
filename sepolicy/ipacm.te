@@ -19,8 +19,9 @@ allow ipacm ipacm:{
 } create_socket_perms_no_ioctl;
 
 # Allow creating and modifying the PID file
-allow ipacm ipacm_data_file:dir w_dir_perms;
-allow ipacm ipacm_data_file:file create_file_perms;
+allow ipacm ipacm_vendor_data_file:dir w_dir_perms;
+allow ipacm ipacm_vendor_data_file:file create_file_perms;
+allow ipacm system_data_file:lnk_file read;
 
 # To register ipacm to hwbinder
 hwbinder_use(ipacm)

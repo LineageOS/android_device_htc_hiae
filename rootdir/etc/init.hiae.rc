@@ -105,7 +105,8 @@ on post-fs-data
     mkdir /data/dpm/nsrm 0771 system system
 
     # Create directory for fingerprint
-    mkdir /data/fpc 0770 system system
+    mkdir /data/vendor/fpc 0770 system system
+    symlink /data/vendor/fpc /data/fpc
 
     # Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
@@ -114,7 +115,8 @@ on post-fs-data
     mkdir /data/shared 0755 system system
 
     # Create directory for IPA
-    mkdir /data/misc/ipa 0700 net_admin net_admin
+    mkdir /data/vendor/ipa 0700 net_admin net_admin
+    symlink /data/vendor/ipa /data/misc/ipa
 
     # Create directory for location services
     mkdir /data/misc/location 0770 gps gps
@@ -142,7 +144,8 @@ on post-fs-data
     mkdir /data/system/perfd 2770 root system
 
     # Create directory for time-services
-    mkdir /data/time/ 0700 system system
+    mkdir /data/vendor/time/ 0700 system system
+    symlink /data/vendor/time /data/time
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system

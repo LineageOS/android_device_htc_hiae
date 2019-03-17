@@ -38,11 +38,11 @@ type persist_time_file, file_type;
 type sensors_persist_file, file_type;
 
 # proc
-type proc_dirty_ratio, fs_type;
-type proc_dt_firmware, fs_type;
-type proc_htc_debug, fs_type;
-type proc_kernel_sched, fs_type;
-type proc_wcnss_service, fs_type;
+type proc_dirty_ratio, proc_type, fs_type;
+type proc_dt_firmware, proc_type, fs_type;
+type proc_htc_debug, proc_type, fs_type;
+type proc_kernel_sched, proc_type, fs_type;
+type proc_wcnss_service, proc_type, fs_type;
 
 # sockets
 type camera_socket, file_type;

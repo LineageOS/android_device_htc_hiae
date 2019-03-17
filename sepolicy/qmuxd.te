@@ -9,7 +9,7 @@ wakelock_use(qmuxd)
 
 qmux_socket(qmuxd);
 
-allow qmuxd self:capability { setuid setgid setpcap dac_override };
+allow qmuxd self:capability { setuid setgid setpcap };
 
 userdebug_or_eng(`
   domain_auto_trans(shell, qmuxd_exec, qmuxd)

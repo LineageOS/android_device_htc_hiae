@@ -7,5 +7,3 @@ userdebug_or_eng(`
 
 # Access firmware_file
 r_dir_file(kernel, firmware_file)
-
-allow kernel misc_block_device:blk_file rw_file_perms;

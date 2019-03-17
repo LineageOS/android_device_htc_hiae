@@ -42,7 +42,6 @@ type proc_dirty_ratio, fs_type;
 type proc_dt_firmware, fs_type;
 type proc_htc_debug, fs_type;
 type proc_kernel_sched, fs_type;
-type proc_slabinfo, fs_type;
 type proc_wcnss_service, fs_type;
 
 # sockets

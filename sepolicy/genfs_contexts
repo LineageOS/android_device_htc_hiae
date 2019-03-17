@@ -17,7 +17,6 @@ genfscon proc /sys/kernel/sched_small_task u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_upmigrate u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_window_stats_policy u:object_r:proc_kernel_sched:s0
 
-genfscon proc /slabinfo u:object_r:proc_slabinfo:s0
 genfscon proc /sys/vm/dirty_ratio u:object_r:proc_dirty_ratio:s0
 
 genfscon sysfs /android_touch/glove_setting u:object_r:sysfs_touchscreen:s0
@@ -68,7 +67,6 @@ genfscon sysfs /devices/virtual/graphics/fb0/dyn_pu u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb0/idle_time u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb0/mode u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb0/modes u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/virtual/graphics/fb0/rgb u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/virtual/net/rmnet_data0/mtu u:object_r:sysfs_net:s0
 genfscon sysfs /devices/virtual/net/rmnet_ipa0/queues/rx-0/rps_cpus u:object_r:sysfs_net:s0
 genfscon sysfs /devices/virtual/optical_sensors/proximity u:object_r:sysfs_sensors:s0

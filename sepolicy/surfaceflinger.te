@@ -28,4 +28,3 @@ userdebug_or_eng(`
 
 set_prop(surfaceflinger, debug_gralloc_prop)
 set_prop(surfaceflinger, sdm_idle_time_prop)
-set_prop(surfaceflinger, sf_lcd_density_prop)

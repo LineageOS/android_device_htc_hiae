@@ -47,6 +47,7 @@ allow init sysfs_dm:file w_file_perms;
 allow init sysfs_graphics:file setattr;
 allow init sysfs_keyboard:file setattr;
 allow init sysfs_lpm:file w_file_perms;
+allow init sysfs_mmc:{ dir file } { relabelfrom relabelto };
 allow init sysfs_mmc:file { w_file_perms setattr };
 allow init sysfs_net:file w_file_perms;
 allow init sysfs_poweron_alarm:file w_file_perms;

@@ -52,7 +52,7 @@ allow init sysfs_net:file w_file_perms;
 allow init sysfs_poweron_alarm:file w_file_perms;
 allow init sysfs_reclaim:file w_file_perms;
 allow init sysfs_sensors:{ file lnk_file } { r_file_perms setattr };
-allow init sysfs_ssr_toggle:file w_file_perms;
+allow init sysfs_ssr:file w_file_perms;
 allow init sysfs_thermal:file w_file_perms;
 allow init sysfs_touchscreen:file setattr;
 allow init sysfs_wlan_fwpath:file setattr;

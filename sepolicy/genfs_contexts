@@ -56,10 +56,10 @@ genfscon sysfs /devices/soc.0/1a00000.qcom,mdss_mdp/caps u:object_r:sysfs_graphi
 genfscon sysfs /devices/soc.0/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.175/leds u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc.0/1c00000.qcom,kgsl-3d0 u:object_r:sysfs_kgsl:s0
 
-genfscon sysfs /devices/soc.0/1de0000.qcom,venus/subsys0/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/soc.0/c200000.qcom,lpass/subsys1/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/soc.0/a21b000.qcom,pronto/subsys2/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/soc.0/4080000.qcom,mss/subsys3/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc.0/1de0000.qcom,venus/subsys0 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc.0/c200000.qcom,lpass/subsys1 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc.0/a21b000.qcom,pronto/subsys2 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc.0/4080000.qcom,mss/subsys3 u:object_r:sysfs_ssr:s0
 
 genfscon sysfs /devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmc:s0
 

@@ -56,7 +56,6 @@ allow system_server sysfs_graphics:file rw_file_perms;
 get_prop(system_server, alarm_boot_prop)
 get_prop(system_server, hwui_prop)
 get_prop(system_server, opengles_prop)
-get_prop(system_server, qemu_hw_mainkeys_prop)
 
 allow system_server system_app:file write;
 allow system_server appdomain:file w_file_perms;

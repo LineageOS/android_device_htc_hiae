@@ -12,8 +12,6 @@ persist.graphics.vulkan.disable u:object_r:graphics_vulkan_prop:s0
 persist.net.doxlat              u:object_r:xlat_prop:s0
 persist.vendor.radio            u:object_r:radio_prop:s0
 persist.vendor.sys.             u:object_r:vendor_system_prop:s0
-qemu.hw.mainkeys                u:object_r:qemu_hw_mainkeys_prop:s0
-qemu.gles                       u:object_r:qemu_gles_prop:s0
 ro.alarm_boot                   u:object_r:alarm_boot_prop:s0
 ro.alarm_handled                u:object_r:alarm_handled_prop:s0
 ro.alarm_instance               u:object_r:alarm_instance_prop:s0

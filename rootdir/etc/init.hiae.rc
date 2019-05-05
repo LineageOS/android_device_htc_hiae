@@ -395,11 +395,11 @@ service vendor.tftp_server /system/vendor/bin/tftp_server
 
 service vendor.thermal-engine /system/vendor/bin/thermal-engine
     class main
-    user root
+    user system
+    group root system
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
-    group root
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.time_daemon /system/vendor/bin/time_daemon

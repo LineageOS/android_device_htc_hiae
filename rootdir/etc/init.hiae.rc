@@ -367,6 +367,7 @@ service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
 service vendor.qcom-sh /system/vendor/bin/init.hiae.sh
     class late_start
     user root
+    group radio root shell
     seclabel u:r:qti_init_shell:s0
     oneshot
 

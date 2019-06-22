@@ -45,7 +45,7 @@ type proc_kernel_sched, proc_type, fs_type;
 type proc_wcnss_service, proc_type, fs_type;
 
 # sockets
-type camera_socket, file_type, data_file_type;
+type camera_socket, file_type, data_file_type, core_data_file_type;
 type ipacm_socket, file_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type netmgrd_socket, file_type;

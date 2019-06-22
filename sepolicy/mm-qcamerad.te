@@ -65,3 +65,5 @@ allowxperm mm-qcamerad self:socket ioctl msm_sock_ipc_ioctls;
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
+
+r_dir_file(mm-qcamerad, sysfs_camera)

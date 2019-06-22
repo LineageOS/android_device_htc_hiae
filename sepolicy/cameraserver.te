@@ -29,6 +29,8 @@ allow cameraserver camera_data_file:dir search;
 allow cameraserver camera_data_file:sock_file write;
 allow cameraserver gpu_device:chr_file rw_file_perms;
 
+r_dir_file(cameraserver, sysfs_camera);
+
 #changes to access laser device
 r_dir_file(cameraserver, input_device);
 

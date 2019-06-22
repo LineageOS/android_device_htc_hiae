@@ -25,50 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow cameraserver camera_data_file:dir search;
-allow cameraserver camera_data_file:sock_file write;
-allow cameraserver gpu_device:chr_file rw_file_perms;
+set_prop(cameraserver, camera_prop)
 
+r_dir_file(cameraserver, camera_data_file)
 r_dir_file(cameraserver, sysfs_camera);
 
-#changes to access laser device
-r_dir_file(cameraserver, input_device);
-
-#Allow surfaceflinger access for camera preview
-allow cameraserver surfaceflinger:unix_stream_socket { read write };
-
-# allow cameraserver to communicate with sensors
-allow cameraserver sensors_device:chr_file rw_file_perms;
-#unix_socket_connect(cameraserver, sensors, sensors);
-allow cameraserver system_server:unix_stream_socket { read write };
-
-#Allow read access to soc/msm-cam/video4linux/video0/name sysfs
-allow cameraserver sysfs:file r_file_perms;
-
-
-allow cameraserver persist_file:dir r_dir_perms;
-set_prop(cameraserver, camera_prop)
-allow cameraserver self:socket create_socket_perms_no_ioctl;
-allow cameraserver sensors_persist_file:dir r_dir_perms;
-allow cameraserver sensors_persist_file:file r_file_perms;
-allow cameraserver graphics_device:dir r_dir_perms;
 allow cameraserver sensorservice_service:service_manager find;
-allow cameraserver system_file:dir r_dir_perms;
+allow cameraserver system_server:unix_stream_socket rw_socket_perms;
 
-#Allows camera to call ADSP QDSP6 functionality
-allow cameraserver qdsp_device:chr_file r_file_perms;
-allow cameraserver camera_prop:file r_file_perms;
+allow cameraserver camera_data_file:sock_file write;
 
-#need this in full_treble for camera perview
-allow cameraserver hal_allocator:fd use;
-
-#Allow camera to use mediacodec binder calls
-allow cameraserver mediacodec:binder call;
-
-# added now for camcorder functionality. need to use HIDL
-userdebug_or_eng(`
 binder_call(cameraserver, hal_graphics_composer)
-')
 
 allow cameraserver debugfs_ion:file r_file_perms;
 allow cameraserver proc_version:file r_file_perms;

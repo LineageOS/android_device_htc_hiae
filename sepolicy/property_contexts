@@ -33,8 +33,8 @@ vendor.peripheral.              u:object_r:per_mgr_state_prop:s0
 vendor.radio                    u:object_r:radio_prop:s0
 vendor.rild.libpath             u:object_r:vendor_rild_libpath_prop:s0
 vendor.wc_transport.            u:object_r:bluetooth_prop:s0
-wlan.driver.ath                 u:object_r:wcnss_prop:s0
-wlan.driver.config              u:object_r:wcnss_prop:s0
+vendor.wlan.driver.ath          u:object_r:wcnss_prop:s0
+vendor.wlan.driver.config       u:object_r:wcnss_prop:s0
 
 # HTC
 htc.camera.                     u:object_r:camera_prop:s0

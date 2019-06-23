@@ -44,61 +44,27 @@
 #include "power-helper.h"
 
 #ifndef MASTER_STATS_FILE
-#define MASTER_STATS_FILE "/sys/power/rpmh_stats/master_stats"
+#define MASTER_STATS_FILE "/d/rpm_master_stats"
 #endif
 
 #ifndef SYSTEM_STATS_FILE
-#define SYSTEM_STATS_FILE "/sys/power/system_sleep/stats"
-#endif
-
-#ifndef WLAN_STATS_FILE
-#define WLAN_STATS_FILE "/d/wlan0/power_stats"
-#endif
-
-#ifndef EASEL_STATS_FILE
-#define EASEL_STATS_FILE "/d/mnh_sm/power_stats"
+#define SYSTEM_STATS_FILE "/d/rpm_stats"
 #endif
 
 #define LINE_SIZE 128
 
 const char *master_stats_labels[MASTER_STATS_COUNT] = {
-    "Sleep Accumulated Duration",
-    "Sleep Count",
-    "Sleep Last Entered At",
+    "accumulated_duration",
+    "count",
+    "last_entered_at",
 };
 
 struct stats_section master_sections[MASTER_COUNT] = {
-    { MASTER_APSS,       "APSS", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_MPSS,       "MPSS", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_ADSP,       "ADSP", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_SLPI,       "SLPI", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_CDSP,       "CDSP", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    // The following masters are currently unused
-    //{ MASTER_GPU,         "GPU", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    //{ MASTER_DISPLAY, "DISPLAY", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-};
-
-const char *wlan_stats_labels[WLAN_STATS_COUNT] = {
-    "cumulative_sleep_time_ms",
-    "cumulative_total_on_time_ms",
-    "deep_sleep_enter_counter",
-    "last_deep_sleep_enter_tstamp_ms"
-};
-
-struct stats_section wlan_sections[] = {
-    { SUBSYSTEM_WLAN, "POWER DEBUG STATS", wlan_stats_labels, ARRAY_SIZE(wlan_stats_labels) },
-};
-
-const char *easel_stats_labels[EASEL_STATS_COUNT] = {
-    "Cumulative count",
-    "Cumulative duration msec",
-    "Last entry timestamp msec"
-};
-
-struct stats_section easel_sections[] = {
-    { SUBSYSTEM_EASEL,     "OFF", easel_stats_labels, ARRAY_SIZE(easel_stats_labels) },
-    { SUBSYSTEM_EASEL,  "ACTIVE", easel_stats_labels, ARRAY_SIZE(easel_stats_labels) },
-    { SUBSYSTEM_EASEL, "SUSPEND", easel_stats_labels, ARRAY_SIZE(easel_stats_labels) },
+    { MASTER_APSS,       "APSS",   master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    { MASTER_LPASS,      "LPASS",  master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    { MASTER_MPSS,       "MPSS",   master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    { MASTER_PRONTO,     "PRONTO", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    { MASTER_TZ,         "TZ",     master_stats_labels, ARRAY_SIZE(master_stats_labels) },
 };
 
 const char *system_stats_labels[SYSTEM_STATE_STATS_COUNT] = {
@@ -107,8 +73,8 @@ const char *system_stats_labels[SYSTEM_STATE_STATS_COUNT] = {
 };
 
 struct stats_section system_sections[] = {
-    { SYSTEM_STATES, "RPM Mode:aosd", system_stats_labels, ARRAY_SIZE(system_stats_labels) },
-    { SYSTEM_STATES, "RPM Mode:cxsd", system_stats_labels, ARRAY_SIZE(system_stats_labels) },
+    { SYSTEM_STATES, "RPM Mode:vlow", system_stats_labels, ARRAY_SIZE(system_stats_labels) },
+    { SYSTEM_STATES, "RPM Mode:vmin", system_stats_labels, ARRAY_SIZE(system_stats_labels) },
 };
 
 static int parse_stats(const char **stat_labels, size_t num_stats,
@@ -221,26 +187,6 @@ int extract_master_stats(uint64_t *list, size_t list_length) {
             master_sections, ARRAY_SIZE(master_sections));
 }
 
-int extract_wlan_stats(uint64_t *list, size_t list_length) {
-    size_t entries_per_section = list_length / ARRAY_SIZE(wlan_sections);
-    if (list_length % entries_per_section != 0) {
-        ALOGW("%s: stats list size not an even multiple of section count", __func__);
-    }
-
-    return extract_stats(list, entries_per_section, WLAN_STATS_FILE,
-            wlan_sections, ARRAY_SIZE(wlan_sections));
-}
-
-int extract_easel_stats(uint64_t *list, size_t list_length) {
-    size_t entries_per_section = list_length / ARRAY_SIZE(easel_sections);
-    if (list_length % entries_per_section != 0) {
-        ALOGW("%s: stats list size not an even multiple of section count", __func__);
-    }
-
-    return extract_stats(list, entries_per_section, EASEL_STATS_FILE,
-            easel_sections, ARRAY_SIZE(easel_sections));
-}
-
 int extract_system_stats(uint64_t *list, size_t list_length) {
     size_t entries_per_section = list_length / ARRAY_SIZE(system_sections);
     if (list_length % entries_per_section != 0) {
@@ -250,4 +196,3 @@ int extract_system_stats(uint64_t *list, size_t list_length) {
     return extract_stats(list, entries_per_section, SYSTEM_STATS_FILE,
             system_sections, ARRAY_SIZE(system_sections));
 }
-

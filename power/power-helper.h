@@ -42,22 +42,15 @@ extern "C" {
 enum stats_source {
     // Master stats
     MASTER_APSS = 0,
+    MASTER_LPASS,
     MASTER_MPSS,
-    MASTER_ADSP,
-    MASTER_SLPI,
-    MASTER_CDSP,  // Not technically used, but included for precautionary stats tracking
-    // The following masters are supported by the RPMh stats driver, but not
-    // in use on our devices.
-    // MASTER_GPU,
-    // MASTER_DISPLAY,
+    MASTER_PRONTO,
+    MASTER_TZ,
     MASTER_COUNT, // Total master sources
 
     // Subsystem stats.  (Numbering starts at MASTER_COUNT to preserve
     // contiguous source numbering.)
     SUBSYSTEM_WLAN = MASTER_COUNT,
-    SUBSYSTEM_EASEL,
-    // Uncomment when Citadel returns
-    //SUBSYSTEM_CITADEL,
 
     // Don't add any lines after this line
     STATS_SOURCE_COUNT, // Total sources of any kind excluding system states
@@ -82,47 +75,9 @@ enum master_stats {
     MASTER_STATS_COUNT
 };
 
-enum wlan_sleep_states {
-    WLAN_STATE_ACTIVE = 0,
-    WLAN_STATE_DEEP_SLEEP,
-
-    // Don't add any lines after this line
-    WLAN_SLEEP_STATE_COUNT
-};
-
-// Note that stats for both WLAN sleep states are in a single section of the
-// source file, so there's only 1 stats section despite having 2 states
-enum wlan_stats {
-    CUMULATIVE_SLEEP_TIME_MS = 0,
-    CUMULATIVE_TOTAL_ON_TIME_MS,
-    DEEP_SLEEP_ENTER_COUNTER,
-    LAST_DEEP_SLEEP_ENTER_TSTAMP_MS,
-
-    // Don't add any lines after this line
-    WLAN_STATS_COUNT
-};
-
-enum easel_sleep_states {
-    EASEL_OFF = 0,
-    EASEL_ACTIVE,
-    EASEL_SUSPEND,
-
-    // Don't add any lines after this line
-    EASEL_SLEEP_STATE_COUNT
-};
-
-enum easel_stats {
-    CUMULATIVE_COUNT = 0,
-    CUMULATIVE_DURATION_MS,
-    LAST_ENTRY_TSTAMP_MS,
-
-    // Don't add any lines after this line
-    EASEL_STATS_COUNT
-};
-
 enum system_sleep_states {
-    SYSTEM_STATE_AOSD = 0,
-    SYSTEM_STATE_CXSD,
+    SYSTEM_STATE_RPM_LOW = 0,
+    SYSTEM_STATE_RPM_MIN,
 
     //Don't add any lines after this line
     SYSTEM_SLEEP_STATE_COUNT
@@ -148,11 +103,7 @@ struct stats_section {
 };
 
 int extract_master_stats(uint64_t *list, size_t list_length);
-int extract_wlan_stats(uint64_t *list, size_t list_length);
-int extract_easel_stats(uint64_t *list, size_t list_length);
 int extract_system_stats(uint64_t *list, size_t list_length);
-
-int get_easel_state(unsigned long *current_state);
 
 #ifdef __cplusplus
 }

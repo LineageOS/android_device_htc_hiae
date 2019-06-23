@@ -152,9 +152,7 @@ BOARD_NFC_CHIPSET := pn548
 BOARD_NFC_HAL_SUFFIX := msm8952
 
 # Power
-TARGET_HAS_NO_WIFI_STATS := true
-TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
-TARGET_USES_INTERACTION_BOOST := true
+USE_DEVICE_SPECIFIC_POWER := true
 
 # Properties
 TARGET_SYSTEM_PROP := device/htc/hiae/system.prop

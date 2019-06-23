@@ -157,3 +157,6 @@ on property:sys.boot_completed=1
 
     rm /data/system/perfd/default_values
     start perfd
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1

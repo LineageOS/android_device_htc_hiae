@@ -239,20 +239,18 @@ Return<void> Power::getPlatformLowPowerStats(getPlatformLowPowerStats_cb _hidl_c
         goto done;
     }
 
-    /* Update statistics for AOSD */
-    state = &states[SYSTEM_STATE_AOSD];
-    state->name = "AOSD";
-    state_stats = &stats[SYSTEM_STATE_AOSD * SYSTEM_STATE_STATS_COUNT];
+    state = &states[SYSTEM_STATE_RPM_LOW];
+    state->name = "RPM VLOW";
+    state_stats = &stats[SYSTEM_STATE_RPM_LOW * SYSTEM_STATE_STATS_COUNT];
 
     state->residencyInMsecSinceBoot = state_stats[ACCUMULATED_TIME_MS];
     state->totalTransitions = state_stats[TOTAL_COUNT];
     state->supportedOnlyInSuspend = false;
     state->voters.resize(0);
 
-    /* Update statistics for CXSD */
-    state = &states[SYSTEM_STATE_CXSD];
-    state->name = "CXSD";
-    state_stats = &stats[SYSTEM_STATE_CXSD * SYSTEM_STATE_STATS_COUNT];
+    state = &states[SYSTEM_STATE_RPM_MIN];
+    state->name = "RPM VMIN";
+    state_stats = &stats[SYSTEM_STATE_RPM_MIN * SYSTEM_STATE_STATS_COUNT];
 
     state->residencyInMsecSinceBoot = state_stats[ACCUMULATED_TIME_MS];
     state->totalTransitions = state_stats[TOTAL_COUNT];
@@ -296,79 +294,6 @@ static int get_master_low_power_stats(hidl_vec<PowerStateSubsystem> *subsystems)
     return 0;
 }
 
-static int get_wlan_low_power_stats(struct PowerStateSubsystem *subsystem) {
-    uint64_t stats[WLAN_STATS_COUNT] = {0};
-    struct PowerStateSubsystemSleepState *state;
-
-    subsystem->name = "wlan";
-
-    if (extract_wlan_stats(stats, ARRAY_SIZE(stats)) != 0) {
-        subsystem->states.resize(0);
-        return -1;
-    }
-
-    subsystem->states.resize(WLAN_SLEEP_STATE_COUNT);
-
-    /* Update statistics for Active State */
-    state = &subsystem->states[WLAN_STATE_ACTIVE];
-    state->name = "Active";
-    state->residencyInMsecSinceBoot = stats[CUMULATIVE_TOTAL_ON_TIME_MS];
-    state->totalTransitions = stats[DEEP_SLEEP_ENTER_COUNTER];
-    state->lastEntryTimestampMs = 0; //FIXME need a new value from Qcom
-    state->supportedOnlyInSuspend = false;
-
-    /* Update statistics for Deep-Sleep state */
-    state = &subsystem->states[WLAN_STATE_DEEP_SLEEP];
-    state->name = "Deep-Sleep";
-    state->residencyInMsecSinceBoot = stats[CUMULATIVE_SLEEP_TIME_MS];
-    state->totalTransitions = stats[DEEP_SLEEP_ENTER_COUNTER];
-    state->lastEntryTimestampMs = stats[LAST_DEEP_SLEEP_ENTER_TSTAMP_MS];
-    state->supportedOnlyInSuspend = false;
-
-    return 0;
-}
-
-static const std::string get_easel_state_name(int state) {
-    if (state == EASEL_OFF) {
-        return "Off";
-    } else if (state == EASEL_ACTIVE) {
-        return "Active";
-    } else if (state == EASEL_SUSPEND) {
-        return "Suspend";
-    } else {
-        return "Unknown";
-    }
-}
-
-// Get low power stats for easel subsystem
-static int get_easel_low_power_stats(struct PowerStateSubsystem *subsystem) {
-    uint64_t stats[EASEL_SLEEP_STATE_COUNT * EASEL_STATS_COUNT] = {0};
-    uint64_t *state_stats;
-    struct PowerStateSubsystemSleepState *state;
-
-    subsystem->name = "Easel";
-
-    if (extract_easel_stats(stats, ARRAY_SIZE(stats)) != 0) {
-        subsystem->states.resize(0);
-        return -1;
-    }
-
-    subsystem->states.resize(EASEL_SLEEP_STATE_COUNT);
-
-    for (int easel_state = 0; easel_state < EASEL_SLEEP_STATE_COUNT; easel_state++) {
-        state = &subsystem->states[easel_state];
-        state_stats = &stats[easel_state * EASEL_STATS_COUNT];
-
-        state->name = get_easel_state_name(easel_state);
-        state->residencyInMsecSinceBoot = state_stats[CUMULATIVE_DURATION_MS];
-        state->totalTransitions = state_stats[CUMULATIVE_COUNT];
-        state->lastEntryTimestampMs = state_stats[LAST_ENTRY_TSTAMP_MS];
-        state->supportedOnlyInSuspend = false;
-    }
-
-    return 0;
-}
-
 // Methods from ::android::hardware::power::V1_1::IPower follow.
 Return<void> Power::getSubsystemLowPowerStats(getSubsystemLowPowerStats_cb _hidl_cb) {
     hidl_vec<PowerStateSubsystem> subsystems;
@@ -378,16 +303,6 @@ Return<void> Power::getSubsystemLowPowerStats(getSubsystemLowPowerStats_cb _hidl
     // Get low power stats for all of the system masters.
     if (get_master_low_power_stats(&subsystems) != 0) {
         ALOGE("%s: failed to process master stats", __func__);
-    }
-
-    // Get WLAN subsystem low power stats.
-    if (get_wlan_low_power_stats(&subsystems[SUBSYSTEM_WLAN]) != 0) {
-        ALOGE("%s: failed to process wlan stats", __func__);
-    }
-
-    // Get Easel subsystem low power stats.
-    if (get_easel_low_power_stats(&subsystems[SUBSYSTEM_EASEL]) != 0) {
-        ALOGE("%s: failed to process Easel stats", __func__);
     }
 
     _hidl_cb(subsystems, Status::SUCCESS);

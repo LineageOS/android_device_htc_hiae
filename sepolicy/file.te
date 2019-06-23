@@ -11,7 +11,7 @@ type ipacm_vendor_data_file, file_type, data_file_type;
 type mpctl_data_file, file_type, data_file_type;
 type netmgrd_data_file, file_type, data_file_type;
 type nfc_vendor_data_file, file_type, data_file_type;
-type sensors_data_file, file_type, data_file_type;
+type sensors_data_file, file_type, data_file_type, core_data_file_type;
 type time_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_data_file, file_type, data_file_type;
 

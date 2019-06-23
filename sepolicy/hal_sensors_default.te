@@ -1,3 +1,4 @@
+typeattribute hal_sensors_default data_between_core_and_vendor_violators;
 allow hal_sensors_default iio_device:chr_file rw_file_perms;
 allow hal_sensors_default sysfs_sensors:file rw_file_perms;
 allow hal_sensors_default sensors_data_file:file create_file_perms;

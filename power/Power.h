@@ -72,8 +72,6 @@ struct Power : public IPower {
     Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) override;
 
  private:
-    static bool isSupportedGovernor();
-
     std::shared_ptr<HintManager> mHintManager;
     std::unique_ptr<InteractionHandler> mInteractionHandler;
     std::atomic<bool> mVRModeOn;

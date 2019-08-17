@@ -29,7 +29,6 @@
 
 #include "Power.h"
 #include "power-helper.h"
-#include "display-helper.h"
 
 /* RPM runs at 19.2Mhz. Divide by 19200 for msec */
 #define RPM_CLK 19200
@@ -211,13 +210,6 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
             {
             ATRACE_BEGIN("low-power");
 
-            if (data) {
-              // Device in battery saver mode, enable display low power mode
-              set_display_lpm(true);
-            } else {
-              // Device exiting battery saver mode, disable display low power mode
-              set_display_lpm(false);
-            }
             ATRACE_END();
             }
             break;

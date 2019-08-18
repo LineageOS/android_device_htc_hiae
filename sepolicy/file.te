@@ -4,6 +4,9 @@ type debugfs_rmt, debugfs_type, fs_type;
 type debugfs_rpm, debugfs_type, fs_type;
 type qti_debugfs, fs_type, debugfs_type;
 
+# device
+type latency_device, dev_type;
+
 # data files
 type diag_data_file, file_type, data_file_type;
 type display_misc_file, file_type, data_file_type;

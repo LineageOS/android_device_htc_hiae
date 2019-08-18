@@ -8,6 +8,7 @@ genfscon proc /device-tree u:object_r:proc_dt_firmware:s0
 genfscon proc /driver/hdf u:object_r:proc_htc_debug:s0
 
 genfscon proc /sys/kernel/power_aware_timer_migration u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_boost u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_downmigrate u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_freq_dec_notify u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_freq_inc_notify u:object_r:proc_kernel_sched:s0

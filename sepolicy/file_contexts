@@ -3,6 +3,7 @@
 #
 /dev/adsprpc-smd                                u:object_r:qdsp_device:s0
 /dev/avtimer                                    u:object_r:avtimer_device:s0
+/dev/cpu_dma_latency                            u:object_r:latency_device:s0
 /dev/diag                                       u:object_r:diag_device:s0
 /dev/dpl_ctrl                                   u:object_r:rmnet_device:s0
 /dev/ipa                                        u:object_r:ipa_dev:s0

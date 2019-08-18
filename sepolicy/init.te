@@ -44,7 +44,7 @@ allow init sysfs_cpu_boost:file w_file_perms;
 allow init sysfs_devfreq:file w_file_perms;
 allow init sysfs_devices_system_cpu:file w_file_perms;
 allow init sysfs_dm:file w_file_perms;
-allow init sysfs_graphics:file setattr;
+allow init sysfs_graphics:file { setattr w_file_perms };
 allow init sysfs_keyboard:file setattr;
 allow init sysfs_lpm:file w_file_perms;
 allow init sysfs_mmc:{ dir file } { relabelfrom relabelto };

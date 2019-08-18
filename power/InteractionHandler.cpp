@@ -30,7 +30,7 @@
 
 #include "InteractionHandler.h"
 
-#define FB_IDLE_PATH "/sys/class/drm/card0/device/idle_state"
+#define FB_IDLE_PATH "/sys/class/graphics/fb0/idle_notify"
 #define MAX_LENGTH 64
 
 #define MSINSEC 1000L
@@ -212,7 +212,7 @@ void InteractionHandler::WaitForIdle(int32_t wait_ms, int32_t timeout_ms) {
         return;
     }
 
-    if (!strncmp(data, "idle", 4)) {
+    if (!strncmp(data, "yes", 4)) {
         ALOGV("%s: already idle", __func__);
         return;
     }

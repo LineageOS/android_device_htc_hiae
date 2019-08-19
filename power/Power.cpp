@@ -18,14 +18,13 @@
 #define LOG_TAG "android.hardware.power@1.3-service.hiae"
 
 #include <android-base/file.h>
-#include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 #include <android-base/stringprintf.h>
 
 #include <mutex>
 
-#include <utils/Log.h>
+#include <log/log.h>
 #include <utils/Trace.h>
 
 #include "Power.h"
@@ -582,7 +581,7 @@ Return<void> Power::debug(const hidl_handle& handle, const hidl_vec<hidl_string>
         // Dump nodes through libperfmgr
         mHintManager->DumpToFd(fd);
         if (!android::base::WriteStringToFd(buf, fd)) {
-            PLOG(ERROR) << "Failed to dump state to fd";
+            ALOGE("Failed to dump state to fd");
         }
         fsync(fd);
     }

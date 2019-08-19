@@ -16,7 +16,7 @@
 
 #define LOG_TAG "android.hardware.power@1.3-service.hiae"
 
-#include <android/log.h>
+#include <log/log.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "Power.h"

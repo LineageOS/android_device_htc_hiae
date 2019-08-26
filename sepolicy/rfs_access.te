@@ -60,7 +60,7 @@ allow rfs_access self:capability {
 # The below permissions are required to recursively update the folder ownership
 # to the new values in the OEM range.
 
-allow rfs_access self:capability { chown };
+allow rfs_access self:capability { chown net_raw };
 
 # For access to the kmsg device
 allow rfs_access kmsg_device:chr_file w_file_perms;
@@ -68,5 +68,3 @@ allow rfs_access kmsg_device:chr_file w_file_perms;
 # Prevent other domains from accessing RFS data files.
 neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:dir create_dir_perms;
 neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:file create_file_perms;
-
-allow rfs_access self:capability { net_raw };

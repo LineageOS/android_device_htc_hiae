@@ -62,6 +62,8 @@ LOCAL_SRC_FILES := IPACM_Main.cpp \
 LOCAL_MODULE := ipacm
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_INIT_RC := ipacm.rc
+
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_SHARED_LIBRARIES := libipanat
